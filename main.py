@@ -27,6 +27,7 @@ def iniciar_processo():
         print("Arquivo não localizado.")
     except Exception as erro:
         print("Erro inesperado:", erro)
+        
 
 if __name__ == "__main__":
     iniciar_processo()

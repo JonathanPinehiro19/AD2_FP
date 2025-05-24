@@ -27,32 +27,47 @@
 # print(valores)
 
 
-# Subprogramas
-def escrever(valores):
-    for item in valores:
-        print (item, end = '')
-    print()
-    return None
+# # Subprogramas
+# def escrever(valores):
+#     for item in valores:
+#         print (item, end = '')
+#     print()
+#     return None
 
-def ler (valores):
-    for i in range (len(valores)):
-        valores[i] = float(input("Valores["+str(i+1)+"]="))
-    return None
+# def ler (valores):
+#     for i in range (len(valores)):
+#         valores[i] = float(input("Valores["+str(i+1)+"]="))
+#     return None
 
-def ordenar(valores):
-    return None
+# def ordenar(valores):
+#     return None
 
-#Programa Principal
-TAM = 10
-numeros = [0.0]*TAM
-ler(numeros)
-escrever(numeros)
-ordenar(numeros)
-escrever(numeros)
+# #Programa Principal
+# TAM = 10
+# numeros = [0.0]*TAM
+# ler(numeros)
+# escrever(numeros)
+# ordenar(numeros)
+# escrever(numeros)
 
 
-# print(numeros)
+# # print(numeros)
 
-def selectionSort(lyst): i = 0 while i < len(lyst) - 1: minIndex = i
-    j = i + 1 while j < len(lyst):
-    j += 1 if minIndex != i: swap(lyst, minIndex, i) i += 1 
+# def selectionSort(lyst): i = 0 while i < len(lyst) - 1: minIndex = i
+#     j = i + 1 while j < len(lyst):
+#     j += 1 if minIndex != i: swap(lyst, minIndex, i) i += 1 
+def buscaElemento(valores, procurado):
+inicio = 0
+fim = len(valores)-1
+    meio = (inicio + fim) // 2
+    while (inicio<fim) and (procurado!=valores[meio]):
+        if procurado>valores[meio]:
+            inicio = meio + 1
+        else:
+            fim = meio -1
+            meio = (inicio + fim) // 2
+    if procurado!=valores[meio]:
+        local = -1
+    else:
+        local = meio
+    return local
